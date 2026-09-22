@@ -60,8 +60,8 @@ traffic rules, local API, and cloud adapter for their own approved use case.
 Clone the baseline:
 
 ```powershell
-git clone https://github.com/GSS-creator/network-guardian.git
-cd network-guardian\desktop-lab
+git clone https://github.com/GSS-creator/GSS-NETWORK-LAB.git
+cd GSS-NETWORK-LAB
 npm install
 npm start
 ```

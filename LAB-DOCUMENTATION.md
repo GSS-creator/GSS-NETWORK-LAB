@@ -83,8 +83,8 @@ This repository is the GSS Virtual Fibre Lab baseline for engineers who need
 to adapt the simulator for an approved network, product, or research use case.
 
 ```powershell
-git clone https://github.com/GSS-creator/network-guardian.git
-cd network-guardian\desktop-lab
+git clone https://github.com/GSS-creator/GSS-NETWORK-LAB.git
+cd GSS-NETWORK-LAB
 npm install
 npm start
 ```
