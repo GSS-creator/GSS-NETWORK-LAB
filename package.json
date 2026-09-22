@@ -1,0 +1,14 @@
+{
+  "name": "gss-network-lab",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Offline GSS network topology and agent test lab",
+  "main": "main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^37.2.6"
+  }
+}

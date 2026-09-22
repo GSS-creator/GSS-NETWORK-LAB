@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GSS Network Lab</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div><strong>GSS NETWORK LAB</strong><span>offline topology and agent test console</span></div>
+      <div class="top-actions"><nav class="screen-nav" aria-label="Lab screens"><button id="topologyScreenBtn" class="screen-btn active" type="button">Topology</button><button id="managementScreenBtn" class="screen-btn" type="button">Management</button></nav><button id="resetBtn" class="quiet">Reset lab</button></div>
+    </header>
+    <main class="layout">
+      <aside class="sidebar management-dashboard">
+        <section class="management-section device-section"><h2>Lab devices</h2><p class="muted">The default layout follows the supplied Cisco topology. Edit IPs to match your Packet Tracer or physical lab.</p><div id="deviceList"></div></section>
+        <section class="management-section server-section"><h2>Local lab server</h2><p id="serverStatus" class="muted">The PC server is stopped. Start it to assign lab IP/MAC identities and generate local traffic.</p><div class="button-row"><button id="serverStartBtn" type="button">Start local server</button><button id="serverStopBtn" class="outline" type="button" disabled>Stop server</button></div></section>
+        <section class="management-section cloud-section"><h2>GSS Intelligence cloud</h2><div class="cloud-connection"><i id="cloudConnectionDot" class="offline"></i><strong id="cloudConnectionState">GSS Cloud: Offline</strong></div><p id="cloudStatus" class="muted">Add an API key to send local-server telemetry to GSS Intelligence.</p><label>Intelligence API key<input id="cloudApiKey" type="password" autocomplete="off" placeholder="Bearer API key" /></label><div class="button-row"><button id="cloudSaveBtn" class="outline" type="button">Save cloud key</button></div></section>
+        <section class="management-section add-section"><h2>Add device</h2><form id="deviceForm">
+          <label>Name<input name="name" required placeholder="Masaka Router" /></label>
+          <label>Type<select name="type"><option>Server</option><option>Firewall</option><option>Router</option><option>Switch</option><option>OLT</option><option>Fiber Splitter</option><option>ONT / CPE</option><option>Access Point</option><option>Client</option></select></label>
+          <label>IP address <small class="muted">optional · assigned by the local server</small><input name="ip" placeholder="auto-assigned" /></label>
+          <label>Branch / centre<input name="site" placeholder="Masaka" /></label>
+          <label>Connect to<select id="parentField" name="parent"><option value="">Standalone / core device</option></select></label>
+          <button type="submit">Add to topology</button>
+        </form></section>
+        <section class="management-section agent-section"><h2>Agent test</h2><p id="agentStatus" class="muted">Select a device and run a local ICMP test.</p><div class="button-row"><button id="pingBtn" disabled>Ping selected device</button><button id="agentBtn" disabled class="outline">Test agent endpoint</button></div></section>
+      </aside>
+      <section class="workspace"><div class="toolbar"><span id="selection">No device selected</span><span class="toolbar-actions"><button id="connectBtn" class="outline" type="button">Connect devices</button><span class="legend"><i class="up"></i>online <i class="warn"></i>degraded <i class="down"></i>offline</span></span></div><div id="canvasWrap"><div id="canvasSpace"><div id="zoomControls"><button id="zoomOut" type="button">−</button><span id="zoomLabel">10%</span><button id="zoomIn" type="button">+</button><button id="zoomFit" type="button">Fit</button><button id="zoomReset" type="button">Reset</button></div><svg id="topology" viewBox="0 0 1400 1250" role="img" aria-label="Editable GSS fibre network topology"></svg><aside id="deviceInspector" hidden><button id="closeInspector" type="button" class="inspector-close">×</button><div id="inspectorContent"></div></aside></div></div><div class="statusbar"><span id="statusText">Local management plane · cloud monitoring available</span><span id="clock"></span></div></section>
+    </main>
+    <section id="trafficScreen" hidden><header><strong>GSS TRAFFIC MONITOR</strong><span>local packet reception stream</span></header><div class="traffic-heading"><span>RECEIVE EVENTS</span><span id="trafficCount">0 packets</span></div><div id="trafficLog" aria-live="polite"></div></section>
+    <script src="app.js"></script>
+  </body>
+</html>

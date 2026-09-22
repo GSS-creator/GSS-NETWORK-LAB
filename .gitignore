@@ -1,0 +1,9 @@
+node_modules/
+gss-local-db.json
+*.log
+.env
+.env.*
+!.env.example
+dist/
+out/
+release/
