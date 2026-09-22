@@ -339,12 +339,9 @@ In **Management → GSS Intelligence cloud**:
 4. Wait for the status to become **GSS Cloud: Online**.
 
 The key is encrypted with Electron's operating-system credential store and is
-not included in telemetry. It can also be supplied before startup:
-
-```powershell
-$env:GSS_INTELLIGENCE_API_KEY = "gss_live_..."
-npm start
-```
+not included in telemetry. It must be entered by the operator in the
+Management screen; it is never compiled into the executable or read from an
+environment variable.
 
 ### Cloud endpoint
 

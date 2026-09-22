@@ -23,7 +23,10 @@ const CLOUD_TELEMETRY_URL = "https://gss-backend.qvaultp.workers.dev/api/infrast
 // The cloud plan permits one snapshot every 60 seconds. Keep a small margin so
 // timer precision and network transit never cause an early 429 request.
 const CLOUD_SYNC_INTERVAL_MS = 65_000;
-let cloudApiKey = process.env.GSS_INTELLIGENCE_API_KEY || process.env.GSS_API_KEY || "";
+// Cloud credentials are deliberately never read from the environment or
+// compiled into the application. Each operator must enter their own key in
+// the Management screen; it is then protected by the OS credential store.
+let cloudApiKey = "";
 let cloudStatus = { configured: Boolean(cloudApiKey), state: cloudApiKey ? "ready" : "not-configured", message: cloudApiKey ? "Cloud telemetry is ready." : "Add an Intelligence API key to enable cloud monitoring.", lastSyncedAt: null, sent: 0, failed: 0 };
 let localDatabase = { version: 1, infrastructure: { devices: [], links: [], updatedAt: null }, credentials: {} };
 

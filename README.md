@@ -166,9 +166,10 @@ change between complete 60-second collections, so the first upload establishes
 the baseline and later uploads report the measured rate.
 Before reporting GSS Cloud as online, the local server verifies that the cloud
 accepted every device in the snapshot. A partial acceptance is shown as an
-offline/error state and is retried at the next interval.
-Only outbound HTTPS access is required. You can alternatively set
-`GSS_INTELLIGENCE_API_KEY` (or `GSS_API_KEY`) before launching the app.
+offline/error state and is retried at the next interval. Only outbound HTTPS
+access is required. The API key must be entered by the operator in the
+Management screen; it is never compiled into the executable or read from an
+environment variable.
 
 The `topo.png` image is included as a reference panel in the app. The editable
 canvas is intentionally rendered as a line-grid so links, branches, and device
