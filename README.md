@@ -51,6 +51,24 @@ npm install
 npm start
 ```
 
+### Build the Windows executable
+
+From `desktop-lab`, package a Windows x64 build with Electron Packager:
+
+```powershell
+npx @electron/packager . GSS-Network-Lab --platform=win32 --arch=x64 --out=dist --overwrite --prune=true
+```
+
+The executable is created at:
+
+```text
+dist\GSS-Network-Lab-win32-x64\GSS-Network-Lab.exe
+```
+
+Keep the complete `GSS-Network-Lab-win32-x64` directory together when moving
+or distributing the application; the executable uses the adjacent `resources`
+directory. The generated `dist` directory is intentionally excluded from Git.
+
 ## Engineering baseline and re-engineering
 
 This repository is the **GSS Virtual Fibre Lab baseline**. Engineers may clone

@@ -67,6 +67,20 @@ npm install
 npm start
 ```
 
+### Windows executable packaging
+
+Create a Windows x64 distributable from the `desktop-lab` directory:
+
+```powershell
+npx @electron/packager . GSS-Network-Lab --platform=win32 --arch=x64 --out=dist --overwrite --prune=true
+```
+
+The resulting executable is
+`dist\GSS-Network-Lab-win32-x64\GSS-Network-Lab.exe`. Distribute the complete
+output directory, including its `resources` directory, rather than copying the
+executable by itself. The build is not code-signed unless a signing
+certificate is added separately.
+
 The browser-only preview is useful when Electron is unavailable:
 
 ```powershell
