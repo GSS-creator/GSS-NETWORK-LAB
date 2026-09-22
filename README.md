@@ -75,8 +75,12 @@ The current Windows executable is published with Git LFS:
 
 [Download GSS-Network-Lab.exe](https://github.com/GSS-creator/GSS-NETWORK-LAB/raw/main/GSS-Network-Lab.exe)
 
-The download is a portable build. Keep the executable's packaged resources
-with it when running the application.
+For the complete ready-to-run package, download the ZIP instead:
+
+[Download complete Windows package](https://github.com/GSS-creator/GSS-NETWORK-LAB/raw/main/GSS-Network-Lab-win32-x64.zip)
+
+Extract the ZIP and launch `GSS-Network-Lab.exe`. The ZIP keeps the executable
+and its packaged resources together.
 
 ## Engineering baseline and re-engineering
 
