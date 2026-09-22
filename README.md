@@ -69,6 +69,15 @@ Keep the complete `GSS-Network-Lab-win32-x64` directory together when moving
 or distributing the application; the executable uses the adjacent `resources`
 directory. The generated `dist` directory is intentionally excluded from Git.
 
+### Download the published executable
+
+The current Windows executable is published with Git LFS:
+
+[Download GSS-Network-Lab.exe](https://github.com/GSS-creator/GSS-NETWORK-LAB/raw/main/GSS-Network-Lab.exe)
+
+The download is a portable build. Keep the executable's packaged resources
+with it when running the application.
+
 ## Engineering baseline and re-engineering
 
 This repository is the **GSS Virtual Fibre Lab baseline**. Engineers may clone
